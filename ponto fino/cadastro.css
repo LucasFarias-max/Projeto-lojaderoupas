@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #5a7255; /* Verde claro de fundo, mais suave */
+}
+
+/* --- Link Voltar para Home (apenas texto) --- */
+.voltar-home-link {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.voltar-home-link a {
+    color: rgb(141, 141, 141); /* Cor cinza para o texto */
+    text-decoration: none; /* Sem sublinhado por padrão */
+    font-size: 16px;
+    padding: 5px 10px; /* Pequeno padding para área de clique */
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    display: inline-block; /* Para aplicar padding */
+}
+
+.voltar-home-link a:hover {
+    color: rgb(0, 12, 0); /* Verde escuro no hover para destaque */
+    text-decoration: underline; /* Sublinhado no hover */
+}
+
+/* --- Layout Principal do Formulário --- */
+.container {
+    width: 80%;
+    max-width: 1200px;
+    height: auto;
+    min-height: 80vh;
+    display: flex;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .212);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.form-image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3efe5; /* Fundo da imagem (mantido, é um tom neutro) */
+    padding: 1rem;
+}
+
+.form-image img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    display: block;
+}
+
+.form-wrapper {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e9e2d1; /* Fundo do formulário (mantido, é um tom neutro) */
+    padding: 3rem;
+}
+
+.form-wrapper form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-header {
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.form-header .title h1 {
+    font-size: 2.2rem;
+    color: #4a664e; /* Verde mais suave para o título */
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.form-header .title h1::after {
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 0.3rem;
+    background-color: #4a664e; /* Verde mais suave para o underline */
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+}
+
+.login-button button {
+    border: none;
+    background-color: #4a664e; /* Verde mais suave para o botão Entrar */
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button button:hover {
+    background-color: #3e543d; /* Um tom um pouco mais escuro no hover */
+}
+
+.login-button button a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 0;
+    width: 100%;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.1rem;
+    width: calc(50% - 1rem); /* 2 colunas com espaçamento */
+}
+
+/* Ajuste para telas menores: uma coluna */
+@media (max-width: 768px) {
+    .input-box {
+        width: 100%;
+    }
+}
+
+.input-box label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #000000c0;
+    margin-bottom: 0.3rem;
+}
+
+.input-box input {
+    padding: 0.8rem 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+    font-size: 1rem;
+}
+
+.input-box input:hover {
+    background-color: #eeeeee75;
+}
+
+.input-box input:focus {
+    outline: none;
+    border-color: #4a664e; /* Verde mais suave ao focar */
+    box-shadow: 0 0 0 2px rgba(74, 102, 78, 0.3); /* Sombra ao focar com o novo verde */
+}
+
+.input-box input::placeholder {
+    color: #000000be;
+}
+
+/* Mensagens de erro */
+.error-message {
+    color: #ff4d4f;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: block;
+}
+
+.gender-inputs {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0 0.5rem;
+}
+
+.gender-title h6 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #000000c0;
+    margin-bottom: 0.6rem;
+}
+
+.gender-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.gender-input {
+    display: flex;
+    align-items: center;
+}
+
+.gender-input input {
+    margin-right: 0.5rem;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    width: auto;
+}
+
+.gender-input label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #000000c0;
+    cursor: pointer;
+}
+
+.continue-button {
+    width: 100%;
+    margin-top: 2.5rem;
+}
+
+.continue-button button {
+    width: 100%;
+    border: none;
+    background-color: #4a664e; /* Verde mais suave para o botão Continuar */
+    padding: 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.continue-button button:hover {
+    background-color: #3e543d; /* Um tom um pouco mais escuro no hover */
+    transform: translateY(-2px);
+}
+
+/* --- Media Queries --- */
+@media screen and (max-width: 1064px) {
+    .container {
+        width: 90%;
+        max-height: none;
+        overflow-y: visible;
+        flex-direction: column;
+    }
+
+    .form-image {
+        display: none;
+    }
+
+    .form-wrapper {
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .input-group {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .input-box {
+        width: 100%;
+    }
+
+    .gender-inputs {
+        margin-top: 1.5rem;
+    }
+
+    .gender-group {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    /* h3 da pagina de logi a pagina de logins tbm usa esse arquivo*/
+
+  .h3{
+    text-decoration: none;
+    color: #3e543d;
+   }
+}
+

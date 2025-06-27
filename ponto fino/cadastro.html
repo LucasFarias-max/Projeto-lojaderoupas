@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastro.css">
+    <title>Cadastro - Ponto Fino</title>
+</head>
+
+<body>
+    <p class="voltar-home-link"><a href="masculino.html">Voltar para a Loja</a></p>
+
+    <div class="container">
+        <div class="form-image">
+            <img src="WhatsApp Image 2025-06-26 at 15.47.38.jpeg" class="logo-ponto-fino" alt="Logo Ponto Fino">
+        </div>
+        <div class="form-wrapper">
+            <form action="#" id="cadastroForm">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cadastre-se</h1>
+                    </div>
+                    <div class="login-button">
+                        <button type="button"><a href="masculino.html">Entrar</a></button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="firstName">Primeiro nome</label>
+                        <input id="firstName" type="text" name="firstName" placeholder="Digite seu primeiro nome" required>
+                        <span class="error-message" id="firstNameError"></span>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="lastName">Sobrenome</label>
+                        <input id="lastName" type="text" name="lastName" placeholder="Digite seu sobrenome" required>
+                        <span class="error-message" id="lastNameError"></span>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="Digite seu email" required>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="phoneNumber">Celular</label>
+                        <input id="phoneNumber" type="tel" name="phoneNumber" placeholder="(xx) xxxx-xxxx" required>
+                        <span class="error-message" id="phoneNumberError"></span>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="password">Senha</label>
+                        <input id="password" type="password" name="password" placeholder="Digite sua senha" required minlength="6">
+                        <span class="error-message" id="passwordError"></span>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="confirmPassword">Confirme sua senha</label>
+                        <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Digite sua senha" required minlength="6">
+                        <span class="error-message" id="confirmPasswordError"></span>
+                    </div>
+                </div>
+
+                <div class="gender-inputs">
+                    <div class="gender-title">
+                        <h6>Gênero</h6>
+                    </div>
+
+                    <div class="gender-group">
+                        <div class="gender-input">
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="female">Feminino</label>
+                        </div>
+
+                        <div class="gender-input">
+                            <input type="radio" id="male" name="gender" value="male">
+                            <label for="male">Masculino</label>
+                        </div>
+
+                        <div class="gender-input">
+                            <input type="radio" id="others" name="gender" value="others">
+                            <label for="others">Outros</label>
+                        </div>
+
+                        <div class="gender-input">
+                            <input type="radio" id="none" name="gender" value="none">
+                            <label for="none">Prefiro não dizer</label>
+                        </div>
+                    </div>
+                    <span class="error-message" id="genderError"></span>
+                </div>
+
+                <div class="continue-button">
+                    <button type="submit">Continuar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="cadastro.js"></script>
+</body>
+</html>

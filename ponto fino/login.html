@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastro.css"> 
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
+    <title>Login - Ponto Fino</title>
+</head>
+
+<body>
+    <p class="voltar-home-link"><a href="masculino.html">Voltar para a Loja</a></p>
+
+    <div class="container">
+        <div class="form-image">
+            <img src="WhatsApp Image 2025-06-26 at 15.47.38.jpeg" class="logo-ponto-fino" alt="Logo Ponto Fino">
+        </div>
+        <div class="form-wrapper">
+            <form action="#" id="loginForm">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Entrar</h1>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="Digite seu email" required>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="password">Senha</label>
+                        <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+                        <span class="error-message" id="passwordError"></span>
+                    </div>
+                </div>
+
+                <div class="continue-button">
+                    <button type="submit">Entrar</button>
+                </div>
+                
+                <h3><a href="cadastro.html" style="text-decoration: none; color: #5a7255;text-decoration: underline;">Cadastrar-se</a></h3>
+
+                    
+            </form>
+        </div>
+    </div>
+    <footer>
+        
+    </footer>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            // Prevent the default form submission behavior
+            event.preventDefault();
+
+            // Get the input values
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Simple validation (you can add more complex validation here)
+            const emailError = document.getElementById('emailError');
+            const passwordError = document.getElementById('passwordError');
+            let hasError = false;
+
+            emailError.textContent = '';
+            passwordError.textContent = '';
+
+            if (email === '') {
+                emailError.textContent = 'Por favor, digite seu e-mail.';
+                hasError = true;
+            } else if (!email.includes('@') || !email.includes('.')) {
+                emailError.textContent = 'Por favor, insira um e-mail válido.';
+                hasError = true;
+            }
+
+            if (password === '') {
+                passwordError.textContent = 'Por favor, digite sua senha.';
+                hasError = true;
+            } else if (password.length < 6) { // Example: password must be at least 6 characters
+                passwordError.textContent = 'A senha deve ter pelo menos 6 caracteres.';
+                hasError = true;
+            }
+
+            if (!hasError) {
+                // If validation passes, simulate a successful login
+                // In a real application, you would send these credentials to a server for verification.
+                alert('Login bem-sucedido! Redirecionando...');
+
+                // Redirect to the desired HTML page
+                window.location.href = 'masculino.html'; // Change 'masculino.html' to your target page
+            }
+        });
+    </script>
+</body>
+
+</html>

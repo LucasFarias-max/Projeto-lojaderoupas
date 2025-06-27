@@ -1,0 +1,518 @@
+/* --- Global Reset e Base Styles --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f0f2f5; /* Fundo mais claro para a página */
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- Cabeçalho (Exemplo - ajuste conforme o seu site) --- */
+.cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 10px 30px;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.marca img {
+    padding-left: 5px;
+    width: 60px;
+    height: auto;
+}
+
+.nome {
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #5a7255;
+}
+
+.central {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.buscador {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+}
+
+.buscador input {
+    padding: 8px;
+    border-radius: 20px 0 0 20px;
+    border: 2px solid rgb(141, 141, 141);
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    width: 400px;
+    border-right: none;
+}
+
+.buscador button {
+    padding: 8px 16px;
+    background-color: #5a7255;
+    color: white;
+    border: 2px solid rgb(141, 141, 141);
+    border-left: none;
+    border-radius: 0 20px 20px 0;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+}
+
+.espaco-direita {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-right: 30px;
+}
+
+.cadastrar {
+    padding: 8px 12px;
+    background-color: #5a7255;
+    color: white;
+    border: 1px solid #5a7255;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+}
+
+.espaco-direita img {
+    width: 20px;
+    height: auto;
+}
+/* --- Fim do Cabeçalho --- */
+
+/* --- Main Content Area --- */
+.carrinho-page-content {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.header-carrinho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.user-info p {
+    font-size: 1.1em;
+    color: #5a7255;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.user-info span {
+    font-weight: bold;
+}
+
+.navigation-links a {
+    color: rgb(141, 141, 141);
+    text-decoration: none;
+    margin-left: 15px;
+    transition: 0.3s;
+    font-size: 1em;
+}
+
+.navigation-links a:hover {
+    color: rgb(0, 12, 0);
+    transform: scale(1.05);
+}
+
+.navigation-links a i {
+    margin-right: 5px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.8em;
+    color: #333;
+    margin-bottom: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.carrinho-main-section {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.carrinho-layout {
+    display: flex;
+    flex-wrap: wrap; /* Permite que as colunas quebrem em telas menores */
+    gap: 30px;
+    align-items: flex-start; /* Alinha o topo das colunas */
+}
+
+/* --- Seção de Itens do Carrinho --- */
+.carrinho-items {
+    flex: 3; /* Ocupa mais espaço */
+    min-width: 300px; /* Garante um tamanho mínimo em telas menores */
+}
+
+.carrinho-vazio-message {
+    text-align: center;
+    font-size: 1.4em;
+    color: #777;
+    padding: 50px 0;
+    display: none; /* Escondido por padrão, mostrado via JS */
+}
+
+.carrinho-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    position: relative; /* Para posicionar o botão de remover */
+}
+
+.item-image {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f8f8; /* Fundo claro para a imagem */
+    border-radius: 8px;
+}
+
+.item-image img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.item-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.item-details h3 {
+    font-size: 1.15em;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.item-price-unit {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.item-quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.quantity-btn {
+    background-color: #eee;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.quantity-btn:hover {
+    background-color: #ddd;
+}
+
+.quantity-display {
+    font-size: 1.1em;
+    min-width: 25px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.item-subtotal {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #5a7255;
+    margin-left: auto; /* Empurra para a direita */
+    min-width: 100px; /* Garante espaço para o subtotal */
+    text-align: right;
+}
+
+.remove-item-btn {
+    background: none;
+    border: none;
+    color: #dc3545; /* Cor vermelha para remover */
+    font-size: 1.2em;
+    cursor: pointer;
+    position: absolute; /* Posição absoluta para o canto superior direito */
+    top: 10px;
+    right: 10px;
+    transition: color 0.2s;
+}
+
+.remove-item-btn:hover {
+    color: #c82333;
+}
+
+/* --- Seção de Resumo da Compra --- */
+.resumo-compra {
+    flex: 1; /* Ocupa o restante do espaço disponível */
+    min-width: 280px; /* Tamanho mínimo para o resumo */
+    background-color: #f8f8f8;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.resumo-compra h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 25px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.resumo-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.resumo-line.total {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #5a7255; /* Cor do total */
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.resumo-line span:first-child {
+    font-weight: normal;
+}
+
+.resumo-line.total span:first-child {
+    font-weight: bold;
+}
+
+/* --- Estilo dos Botões de Ação do Carrinho (Limpar e Finalizar Compra) --- */
+.btn-primary {
+    padding: 12px 25px;
+    background-color: #5a7255; /* Cor primária do seu site */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 100%; /* Ocupa a largura total */
+    margin-top: 20px;
+}
+
+.btn-primary:hover {
+    background-color: #3e543d; /* Tom mais escuro no hover */
+    transform: translateY(-2px);
+}
+
+/* Estilo para o botão secundário (Limpar Carrinho) */
+.btn-secondary {
+    padding: 12px 25px;
+    background-color: #d9534f; /* Cor vermelha para "limpar" */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 100%; /* Ocupa a largura total */
+    margin-top: 10px;
+}
+
+.btn-secondary:hover {
+    background-color: #c9302c; /* Tom mais escuro no hover */
+    transform: translateY(-2px);
+}
+
+.btn-continue-shopping {
+    display: block; /* Ocupa a linha inteira */
+    text-align: center;
+    margin-top: 20px;
+    color: #5a7255;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+    font-size: 1em;
+}
+
+.btn-continue-shopping:hover {
+    color: #3e543d;
+    text-decoration: underline;
+}
+
+.btn-continue-shopping i {
+    margin-right: 8px;
+}
+
+
+/* --- Rodapé --- */
+footer {
+    
+    background-color: #3e543d;
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 50px; /* Espaço entre o conteúdo e o rodapé */
+    position: static;
+    bottom: 0px;
+}
+
+.social-icons {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.social-icons a {
+    color: #f8f8f8;
+    font-size: 28px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-icons a:hover {
+    color: #007bff;
+    transform: scale(1.1);
+}
+
+/* --- Responsividade Básica --- */
+@media (max-width: 768px) {
+    .carrinho-layout {
+        flex-direction: column; /* Pilha as colunas em telas menores */
+        align-items: center;
+    }
+
+    .carrinho-items,
+    .resumo-compra {
+        width: 100%; /* Ocupa toda a largura disponível */
+        max-width: 500px; /* Limita a largura para melhor leitura */
+    }
+
+    .item-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .item-details h3 {
+        font-size: 1em;
+    }
+
+    .item-subtotal {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .cabecalho {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .central {
+        width: 100%;
+    }
+
+    .buscador input {
+        width: 100%;
+    }
+
+    .espaco-direita {
+        width: 100%;
+        justify-content: center;
+        padding-right: 0;
+    }
+
+    .header-carrinho {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .user-info, .navigation-links {
+        text-align: center;
+        width: 100%;
+    }
+
+    .navigation-links a {
+        margin: 0 8px;
+    }
+
+    h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .carrinho-item {
+        flex-direction: column; /* Pilha os itens dentro do card */
+        text-align: center;
+        align-items: center;
+    }
+
+    .item-image {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .item-details {
+        align-items: center;
+        text-align: center;
+    }
+
+    .item-subtotal {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    .remove-item-btn {
+        position: static; /* Volta à posição normal */
+        margin-top: 10px;
+    }
+}

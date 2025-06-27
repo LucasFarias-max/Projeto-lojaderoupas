@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Carrinho de Compras - Ponto Fino</title>
+    <link rel="stylesheet" href="carrinho.css">
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header class="cabecalho">
+        <div class="logo">
+            <div class="marca">
+                <img src="android-chrome-512x512.png" alt="Logo">
+            </div>
+            <div class="nome"><h2>Ponto Fino</h2></div>
+        </div>
+        <div class="central">
+            <form class="buscador" action="/buscar" method="get">
+                <input type="text" name="q" placeholder="Buscar produto...">
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+        <div class="espaco-direita">
+            <a href="cadastro.html"><button class="cadastrar">Cadastrar-se</button></a>
+            <a href="carrinho.html"><img src="https://cdn-icons-png.flaticon.com/512/107/107831.png" alt="Carrinho"></a>
+        </div>
+    </header>
+    <main class="carrinho-page-content">
+        <div class="header-carrinho">
+            <div class="user-info">
+                <p>Olá, <span id="userName">Usuário</span>!</p>
+            </div>
+            <div class="navigation-links">
+                <a href="masculino.html"><i class="fas fa-home"></i> Home</a>
+                <a href="javascript:history.back()"><i class="fas fa-arrow-left"></i> Voltar</a>
+            </div>
+        </div>
+
+        <section class="carrinho-main-section">
+            <h1>Seu Carrinho</h1>
+
+            <div class="carrinho-layout">
+                <div class="carrinho-items" id="carrinho-items-container">
+                    <p class="carrinho-vazio-message">Seu carrinho está vazio.</p>
+                </div>
+
+                <div class="resumo-compra">
+                    <h2>Resumo da Compra</h2>
+                    <div class="resumo-line">
+                        <span>Subtotal:</span>
+                        <span id="subtotal-valor">R$ 0,00</span>
+                    </div>
+                    <div class="resumo-line">
+                        <span>Frete:</span>
+                        <span id="frete-valor">R$ 0,00</span>
+                    </div>
+                    <div class="resumo-line total">
+                        <span>Total:</span>
+                        <span id="total-valor">R$ 0,00</span>
+                    </div>
+                    <button class="btn-primary" onclick="irParaCheckout()">Finalizar Compra</button>
+                    <button class="btn-secondary btn-limpar" onclick="limparCarrinho()">Limpar Carrinho</button>
+                    <a href="masculino.html" class="btn-continue-shopping"><i class="fas fa-shopping-bag"></i> Continuar Comprando</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+        </div>
+        <p>Copyright © 2025 Ponto Fino. Todos os direitos reservados.</p>
+        <p>Contato: pontofino@gmail.com</p>
+    </footer>
+
+    <script src="scriptcarrinho.js"></script>
+</body>
+</html>
